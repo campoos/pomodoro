@@ -6,9 +6,9 @@ function App() {
   const [mode, setMode] = useState("focus");
   const [pomodorosDone, setPomodorosDone] = useState(0);
 
-  const FOCUS_TIME = 0.1 * 60;
-  const BREAK_TIME = 0.05 * 60;
-  const LONG_BREAK_TIME = 0.1 * 60;
+  const FOCUS_TIME = 25 * 60;
+  const BREAK_TIME = 5 * 60;
+  const LONG_BREAK_TIME = 15 * 60;
 
   const getInitialTime = () => {
     if (mode === "focus") return FOCUS_TIME;
