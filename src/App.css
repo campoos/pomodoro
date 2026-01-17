@@ -1,0 +1,298 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app.focus {
+  --bg: #ff6b4a;
+  --card: rgb(65, 65, 65);
+  --bar: rgb(255, 145, 126);
+}
+
+.app.break {
+  --bg: rgb(98, 159, 194);
+  --card: rgb(65, 65, 65);
+  --bar: #92b8d8;
+}
+
+.app.longBreak {
+  --bg: #a37be4;
+  --card: rgb(65, 65, 65);
+  --bar: #b594eb;
+}
+
+.app,
+.counter,
+.progress-bar {
+  transition: background-color 0.4s ease;
+}
+
+body {
+  height: 100dvh;
+  width: 100dvw;
+
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+
+  padding: 0;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 0rem 15rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 1.5rem;
+
+  border-radius: 25px;
+
+  background-color: var(--bar);
+
+  overflow: hidden;
+
+  transition: all 1s ease-in-out;
+}
+
+.progress-bar-container.disabled {
+  width: 2rem;
+  background: var(--bg);
+}
+
+.progress-bar {
+  background-color: white;
+  height: 100%;
+
+  border-radius: 25px;
+
+  transition: width 1s linear, opacity 0.2s ease-in-out;
+}
+
+.progress-bar.disabled {
+  opacity: 0;
+}
+
+.counter {
+  background-color: transparent;
+  width: 60%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+}
+
+h1 {
+  color: white;
+  font-size: 10rem;
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  gap: 3rem;
+}
+
+.buttons button {
+  height: 5rem;
+  width: 15rem;
+
+  font-size: 1.5rem;
+  color: var(--card);
+
+  border-radius: 5px;
+
+  border: none;
+  box-shadow: 0px 7px 0px 0px rgb(212, 212, 212);
+
+  background-color: white;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.buttons button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.buttons button:active {
+  transform: scale(0.9);
+}
+
+span {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  transition: all 1s ease-in-out;
+}
+
+.finishAt {
+  padding: 1rem 5rem;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+
+  border-radius: 15px;
+}
+
+.finishAt h2 {
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.finishAt h2 strong {
+  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media(max-width:600px) {
+  .app {
+    padding: 0rem 1.5rem;
+
+    gap: 0rem;
+    justify-content: space-evenly;
+  }
+
+  .counter {
+    width: 100%;
+    height: fit-content;
+    padding: 3rem 0rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .buttons {
+    gap: 1.5rem;
+  }
+
+  .buttons button {
+    width: 8rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+
+  span {
+    font-size: 1.5rem;
+  }
+
+  .finishAt {
+    padding: 1rem;
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .finishAt h2 {
+    font-size: 1rem;
+  }
+}
+
+@media(min-width:601px) and (max-width: 1000px) {
+  .app {
+    padding: 0rem 3rem;
+
+    gap: 0rem;
+    justify-content: space-evenly;
+  }
+
+  .counter {
+    width: 100%;
+    height: fit-content;
+    padding: 3rem 0rem;
+  }
+
+  h1 {
+    font-size: 10rem;
+  }
+
+  .buttons {
+    gap: 3rem;
+  }
+
+  .buttons button {
+    width: 15rem;
+    height: 5rem;
+    font-size: 1.5rem;
+  }
+
+  .finishAt {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .finishAt h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media(min-width:1001px) and (max-width: 1800px) {
+  .app {
+    padding: 0rem 3rem;
+
+    gap: 0rem;
+    justify-content: space-evenly;
+  }
+
+  .counter {
+    width: 100%;
+    height: fit-content;
+    padding: 0rem 0rem;
+  }
+
+  h1 {
+    font-size: 12rem;
+  }
+
+  .buttons {
+    gap: 3rem;
+  }
+
+  .buttons button {
+    width: 18rem;
+    height: 7rem;
+    font-size: 2rem;
+  }
+
+  span {
+    font-size: 2rem;
+  }
+
+  .finishAt {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .finishAt h2 {
+    font-size: 2rem;
+  }
+}
